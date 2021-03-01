@@ -3,8 +3,8 @@
 Instaclone Backend.
 
 ## User : 
- - [ ] Create Account
- - [ ] See Profile
+ - [✅] Create Account
+ - [✅] See Profile
  - [ ] Login
  - [ ] Edit Profile
  - [ ] Follow User
