@@ -3,13 +3,13 @@ dotenv.config()
 
 import schema from './schema';
 import { ApolloServer } from 'apollo-server';
-import { GetUser } from './users/users.utils';
+import { getUser } from './users/users.utils';
 
 const server = new ApolloServer({
   schema,
   context: async ({req}) => {
     return {
-      logginedUser: await GetUser(req.headers.jwt_token)
+      logginedUser: await getUser(req.headers.jwt_token)
     }
   }
 });

@@ -2,7 +2,7 @@
 
 Instaclone Backend.
 
-## User : 
+## User
  - [x] Create Account
  - [x] See Profile
  - [x] Login
@@ -10,3 +10,6 @@ Instaclone Backend.
  - [ ] Follow User
  - [ ] UnFollow User
  - [ ] Change Avatar (Image Upload)
+
+
+##
