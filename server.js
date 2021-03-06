@@ -9,9 +9,9 @@ const server = new ApolloServer({
   schema,
   context: async ({req}) => {
     return {
-      logginedUser: await getUser(req.headers.jwt_token)
-    }
-  }
+      logginedUser: await getUser(req.headers.token)
+    };
+  },
 });
 
 // The `listen` method launches a web server.
