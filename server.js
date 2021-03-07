@@ -6,7 +6,8 @@ import { ApolloServer } from 'apollo-server';
 import { getUser } from './users/users.utils';
 
 const server = new ApolloServer({
-  typeDefs, resolvers,
+  typeDefs,
+  resolvers,
   context: async ({req}) => {
     return {
       logginedUser: await getUser(req.headers.token)
@@ -15,11 +16,11 @@ const server = new ApolloServer({
 });
 
 // The `listen` method launches a web server.
-
+export
 const PORT = process.env.PORT;
 
 server
-  .listen(PORT)
+  .listen(PORT) 
   .then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
   });

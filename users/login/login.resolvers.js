@@ -15,8 +15,8 @@ export default {
             }
             // 유저의 Password 와 password의 hash 값을 비교한다.
             const isPwPassed = await bcrypt.compare(password, user.password);
-            const token = jwt.sign({ id: user.id }, process.env.PRIVATE_KEY);
             if (isPwPassed) {
+                const token = jwt.sign({ id: user.id }, process.env.PRIVATE_KEY);
                 return {
                     ok: true,
                     token: token
@@ -24,7 +24,6 @@ export default {
             } else {
                 return {
                     ok: false,
-                    token: token,
                     error: "Password is InCorrected."
                 }
             }
