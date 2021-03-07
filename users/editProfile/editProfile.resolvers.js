@@ -40,7 +40,7 @@ const fnEditProfile = async (_,
             email,
             bio,
             ...(hashedPW && { password: hashedPW }),
-            ...(avatar_url&& {avatar:avatar_rul})
+            ...(avatar_url&& {avatar:avatar_url})
         },
     });
     if (updateUser.id) {
