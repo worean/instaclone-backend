@@ -6,10 +6,20 @@ Instaclone Backend.
  - [x] Create Account
  - [x] See Profile
  - [x] Login
- - [ ] Edit Profile
- - [ ] Follow User
+ - [x] Edit Profile
+ - [x] Change Avatar (Image Upload)
+ - [x] Follow User
  - [ ] UnFollow User
- - [ ] Change Avatar (Image Upload)
+ - [ ] See Followers
+ - [ ] See Followings
+ - [ ] Search Users
 
-
-##
+## Photo
+ - [ ] See Photo
+ - [ ] Upload Photo
+ - [ ] Edit Photo
+ - [ ] Like / unLike Photo
+ - [ ] See Photo Likes
+ - [ ] See Feed
+ - [ ] Search Photo
+ - [ ] See Hashtags
