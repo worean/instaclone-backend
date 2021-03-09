@@ -4,12 +4,8 @@ export default {
     Query: {
         seeFollowers: async (_, { userName, page }) => {
             const verified = await client.user.findUnique({
-                where: {
-                    userName
-                },
-                select: {
-                    id: true // user정보 중에서 id만을 가져온다.
-                },
+                where: { userName },
+                select: { id: true },// user정보 중에서 id만을 가져온다.
             })
             if (!verified) {
                 return {
