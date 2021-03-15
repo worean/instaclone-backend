@@ -17,14 +17,11 @@ model User {
     password    String
     bio         String?
     avatar      String?
-
     // Post 시스템
     photos      Photo[]
-
     // Follow 시스템
     following   User[] @relation("FollowRelation", references:[id])
     followers   User[] @relation("FollowRelation", references:[id])
-
     // 날짜 정보
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
@@ -38,7 +35,6 @@ model Photo {
     file        String
     caption     String?
     hashTags    Hashtag[]
-    
     // 날짜 정보
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
@@ -46,9 +42,8 @@ model Photo {
 
 model Hashtag {
     id          Int         @id @default(autoincrement())
-    hashTag     String
+    hashTag     String      @unique
     photos      Photo[]
-    
     // 날짜 정보
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
