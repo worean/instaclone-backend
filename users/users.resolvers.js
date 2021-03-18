@@ -44,7 +44,11 @@ export default {
                 }
             })
             return Boolean(exists);
-        }
-
+        },
+        photos: ({id}, {page}) => {
+            return client.user.findUnique({where:{id}}).photos(
+                // ToDo : Pagination 구현 필요함
+            );
+        },
     }
 }

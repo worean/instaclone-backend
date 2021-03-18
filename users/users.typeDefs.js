@@ -13,6 +13,7 @@ export default gql`
         updatedAt:String!
         following:[User]
         followers:[User]
+        photos(page:Int):[Photo]
 
         totalFollowers:Int!
         totalFollowing:Int!

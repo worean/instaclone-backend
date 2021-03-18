@@ -15,10 +15,10 @@ Instaclone Backend.
  - [x] Search Users
 
 ## Photo
- - [ ] Upload Photo
- - [ ] See Photo
- - [ ] See Hashtags
- - [ ] Search Photo
+ - [x] Upload Photo
+ - [x] See Photo
+ - [x] See Hashtags
+ - [x] Search Photo
  - [ ] Edit Photo
  - [ ] Like / unLike Photo
  - [ ] See Photo Likes
