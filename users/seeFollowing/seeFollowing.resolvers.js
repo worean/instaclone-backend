@@ -20,6 +20,7 @@ export default {
                     skip: cursor ? 1 : 0,   // cursor 방식의 pagination은 skip이 항상 1이다. -> 처음일 경우는 0으로 들어간다.
                     ...(cursor && { cursor: { id:cursor}})  // User의 ID값이 Cursor가 된다.
                 });
+            console.log(following);
             return {
                 ok: true,
                 following

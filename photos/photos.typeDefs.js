@@ -6,14 +6,15 @@ export default gql`
         user:User!
         file:String!
         caption:String
-        hashTag:[Hashtag]
+        hashtags:[Hashtag]
         createdAt:String!
         updatedAt:String!
-    }
+    },
     type Hashtag {
         id:Int!
         hashtag:String!
-        photos:[Photo]
+        photos(page:Int):[Photo]
+        totalPhotos:Int
         createdAt:String!
         updatedAt:String!
     }
