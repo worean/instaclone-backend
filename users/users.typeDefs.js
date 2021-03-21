@@ -17,7 +17,8 @@ export default gql`
 
         totalFollowers:Int!
         totalFollowing:Int!
-        
+        totalPhotos:Int!
+
         isMe:Boolean!
         isFollowing:Boolean!
 
