@@ -19,6 +19,7 @@ model User {
     avatar      String?
     // Post 시스템
     photos      Photo[]
+    likes       Like[]
     // Follow 시스템
     following   User[] @relation("FollowRelation", references:[id])
     followers   User[] @relation("FollowRelation", references:[id])
@@ -35,6 +36,7 @@ model Photo {
     file        String
     caption     String?
     hashtags    Hashtag[]
+    likes       Like[]
     // 날짜 정보
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
@@ -47,4 +49,17 @@ model Hashtag {
     // 날짜 정보
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
+}
+
+model Like {
+    id          Int         @id @default(autoincrement())
+    user        User        @relation(fields: [userId], references:[id])
+    photo       Photo       @relation(fields: [photoId], references:[id])
+    userId      Int
+    photoId     Int       
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+
+    // 좋아요는 여러번 중첩할 수 없다.
+    @@unique([userId,photoId])
 }
