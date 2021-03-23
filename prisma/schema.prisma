@@ -20,6 +20,7 @@ model User {
     // Post 시스템
     photos      Photo[]
     likes       Like[]
+    comments    Comment[]
     // Follow 시스템
     following   User[] @relation("FollowRelation", references:[id])
     followers   User[] @relation("FollowRelation", references:[id])
@@ -37,6 +38,7 @@ model Photo {
     caption     String?
     hashtags    Hashtag[]
     likes       Like[]
+    comments    Comment[]
     // 날짜 정보
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
@@ -62,4 +64,15 @@ model Like {
 
     // 좋아요는 여러번 중첩할 수 없다.
     @@unique([userId,photoId])
+}
+
+model Comment {
+    id          Int         @id @default(autoincrement())
+    payload     String
+    user        User        @relation(fields: [userId], references:[id])
+    photo       Photo       @relation(fields: [photoId], references:[id])
+    userId      Int
+    photoId     Int       
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
 }
