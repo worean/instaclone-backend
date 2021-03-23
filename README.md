@@ -20,8 +20,8 @@ Instaclone Backend.
  - [x] See Hashtags
  - [x] Search Photo
  - [x] Edit Photo
- - [ ] Like / unLike Photo
- - [ ] See Photo Likes
+ - [x] Like / unLike Photo
+ - [x] See Photo Likes
  - [ ] See Feed
 
 ## Comments
