@@ -3,6 +3,7 @@ import { protectedResolver } from "../../users/users.utils";
 
 export default {
     Query: {
+        // 내가 팔로우된 사람들과 내 게시물(Photo)를 가져오는 Query
         seeFeed:protectedResolver(async(_,__,{logginedUser}) => {
             return await client.photo.findMany({
                 where: {

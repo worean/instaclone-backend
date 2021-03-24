@@ -26,7 +26,6 @@ Instaclone Backend.
  - [x] See Photo Comments
  - [ ] Delete Photo
  - [ ] isMine 구현
- - [ ] Upload Photo AWS S3
 
 ## Comments
  - [x] Comment on Photo
@@ -35,3 +34,10 @@ Instaclone Backend.
  - [ ] isMine 구현
 
 ## 추가 계획
+ - [ ] Upload Photo AWS S3
+
+
+## Nofitication
+ - [ ] Create Notification 
+ - [ ] Delete Notification
+ - [ ] Push Alarm
