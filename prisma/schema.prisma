@@ -76,11 +76,3 @@ model Comment {
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
 }
-
-model Notification {
-    id          Int         @id @default(autoincrement())
-    message     String
-    contentType String
-    createdAt   DateTime    @default(now())
-    updatedAt   DateTime    @updatedAt
-}
