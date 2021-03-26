@@ -25,13 +25,13 @@ Instaclone Backend.
  - [x] See Feed
  - [x] See Photo Comments
  - [ ] Delete Photo
- - [ ] isMine 구현
+ - [x] isMine 구현
 
 ## Comments
  - [x] Comment on Photo
  - [ ] Edit Comment
  - [ ] Delete Comment
- - [ ] isMine 구현
+ - [x] isMine 구현
 
 ## 추가 계획
  - [ ] Upload Photo AWS S3
