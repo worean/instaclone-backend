@@ -29,13 +29,12 @@ Instaclone Backend.
 
 ## Comments
  - [x] Comment on Photo
- - [ ] Edit Comment
- - [ ] Delete Comment
+ - [x] Edit Comment
+ - [x] Delete Comment
  - [x] isMine 구현
 
-## 추가 계획
- - [ ] Upload Photo AWS S3
-
+## AWS S3
+ - [x] Upload Photo AWS S3
 
 ## Nofitication
  - [ ] Create Notification 
