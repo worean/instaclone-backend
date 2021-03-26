@@ -5,6 +5,9 @@ export default {
     user: ({ userId }) => {
       return client.user.findUnique({ where: { id: userId } });
     },
+    isMine: ({userId},_,{logginedUser}) => {
+      return userId === logginedUser.id;
+    },
     hashtags: ({ id }) => {
       return client.hashtag.findMany({
         where: {
@@ -29,7 +32,7 @@ export default {
           photoId:id
         }
       })
-    }
+    },
   },
   Hashtag: {
     photos: ({ id }, { page }) => {
