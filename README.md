@@ -36,6 +36,13 @@ Instaclone Backend.
 ## AWS S3
  - [x] Upload Photo AWS S3
 
+## DMs
+ - [x] Create Room
+ - [x] See Rooms
+ - [ ] See Room
+ - [ ] Computed Fields
+ - [ ] Realtime Messages
+
 ## Nofitication
  - [ ] Create Notification 
  - [ ] Delete Notification

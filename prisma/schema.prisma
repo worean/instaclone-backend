@@ -24,6 +24,10 @@ model User {
     // Follow 시스템
     following   User[] @relation("FollowRelation", references:[id])
     followers   User[] @relation("FollowRelation", references:[id])
+
+    // 채팅 시스템
+    rooms       Room[]
+    messages    Message[]
     // 날짜 정보
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
@@ -73,6 +77,25 @@ model Comment {
     photo       Photo       @relation(fields: [photoId], references:[id])
     userId      Int
     photoId     Int       
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+}
+
+model Room {
+    id          Int         @id @default(autoincrement())
+    users       User[]
+    messages    Message[]
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+}
+
+model Message {
+    id          Int         @id @default(autoincrement())
+    payload     String
+    user        User        @relation(fields: [userId],references:[id])
+    userId      Int
+    room        Room        @relation(fields: [roomId],references:[id])
+    roomId      Int
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
 }
