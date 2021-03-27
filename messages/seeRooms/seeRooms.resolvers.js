@@ -11,7 +11,8 @@ export default {
                             id: logginedUser.id
                         }
                     }
-                }
+                },
+                
             });
         }),
     },
