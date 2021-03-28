@@ -1,4 +1,6 @@
 import client from "../../client";
+import { NEW_MESSAGE } from "../../constant";
+import { pubsub } from "../../pubsub";
 import { protectedResolver } from "../../users/users.utils";
 
 export default {
@@ -20,7 +22,7 @@ export default {
                         error: "User is not exist."
                     };
                 }
-                newRoom = await client.room.create({
+                room = await client.room.create({
                     data: {
                         users: {
                             connect: [
@@ -48,7 +50,7 @@ export default {
                     }
                 }
             }
-            await client.message.create({
+            const newMessage = await client.message.create({
                 data: {
                     payload,
                     room: {
@@ -63,6 +65,8 @@ export default {
                     }
                 }
             });
+            // NEW_MESSAGE를 PUBLISH 한다.
+            pubsub.publish(NEW_MESSAGE,{roomUpdates : newMessage});
             return {
                 ok: true
             }
