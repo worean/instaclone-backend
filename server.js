@@ -12,13 +12,30 @@ const PORT = process.env.PORT;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: async ({ req }) => {
-    if(req) {
+  context: async (ctx) => {
+    if(ctx.req) {
       return {
-        logginedUser: await getUser(req.headers.token)
+        logginedUser: await getUser(ctx.req.headers.token)
       };
+    } else {
+      // ws 는 request 대신 connection을 쓴다.
+      return {
+        logginedUser: ctx.connection.context.logginedUser
+      }
     }
   },
+  subscriptions: {
+    // request Header의 내용을 가져온다.
+    onConnect: async ({ token }) => {
+      if (!token) {
+        throw new Error("You can't listen.")
+      }
+      const logginedUser = await getUser(token);
+      return {
+        logginedUser
+      }
+    }
+  }
 });
 
 const app = express();
