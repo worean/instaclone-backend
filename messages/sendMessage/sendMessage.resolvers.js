@@ -66,7 +66,7 @@ export default {
                 }
             });
             // NEW_MESSAGE를 PUBLISH 한다.
-            pubsub.publish(NEW_MESSAGE,{roomUpdates : newMessage});
+            pubsub.publish(NEW_MESSAGE,{roomUpdates : {...newMessage}});
             return {
                 ok: true
             }
