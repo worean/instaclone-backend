@@ -28,6 +28,10 @@ model User {
     // 채팅 시스템
     rooms       Room[]
     messages    Message[]
+
+    // 알림 시스템
+    notices     Notification[]
+
     // 날짜 정보
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
@@ -96,6 +100,16 @@ model Message {
     userId      Int
     room        Room        @relation(fields: [roomId],references:[id])
     roomId      Int
+    read        Boolean     @default(false)
+    createdAt   DateTime    @default(now())
+    updatedAt   DateTime    @updatedAt
+}
+
+model Notification {
+    id          Int         @id @default(autoincrement())
+    notifyType  Int
+    user        User        @relation(fields: [userId],references:[id])
+    userId      Int
     read        Boolean     @default(false)
     createdAt   DateTime    @default(now())
     updatedAt   DateTime    @updatedAt
